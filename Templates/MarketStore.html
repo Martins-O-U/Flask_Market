@@ -12,6 +12,28 @@
         color: white; 
         margin: auto;
     }
+    th{
+        width: 20%;
+        text-align: center;
+        border-bottom: grey 2px solid;
+    }
+    td{
+        width: 20%;
+        text-align: center;
+        border-bottom: grey 2px solid;
+    }
+    table{
+        width: 100%;
+        border: grey 2px solid;
+    }
+    .info{
+        background-color: dodgerblue;
+        border-radius: 7px;
+    }
+    .purchase{
+        background-color: lawngreen;
+        border-radius: 7px;
+    }
 </style>
 <body>
     <header>
@@ -28,6 +50,31 @@
         </nav>
     </header>
     <h1>This is the Market page</h1>
-    <p>Presently we only have {{ items_name }} in stock</p>
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Barcode</th>
+                <th scope="col">Price</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items_name %}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.barcode}}</td>
+                    <td>{{item.price}}</td>
+                    <td>
+                        <button class="info">More Info</button>
+                        <button class="purchase">Purchase This</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- <p>Presently we only have {{ items_name }} in stock</p> -->
 </body>
 </html>
