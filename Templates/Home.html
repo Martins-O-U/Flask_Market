@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<style>
-    body {
-        background-color: #212121;
-        color: white; 
-        margin: auto;
-    }
-</style>
-<body>
-    <header>
-        <nav style="background-color: dodgerblue; display: flex; justify-content: space-between; padding: 5px;">
-            <div>
-                <a style="cursor: pointer; padding:2px 5px; color: white;">Home</a>
-                <a style="cursor: pointer; padding:2px 5px; color: white;">About</a>
-                <a style="cursor: pointer; padding:2px 5px; color: white;">Contact</a>
-            </div>
-            <div>
-                <a style="cursor: pointer; padding:2px 5px; color: white;">Register</a>
-                <a style="cursor: pointer; padding:2px 5px; color: white;">Explore</a> 
-            </div>
-        </nav>
-    </header>
-    <h1>This is the new home page</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block Title%}
+    Home Page
+{% endblock%}

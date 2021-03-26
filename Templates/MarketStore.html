@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,10 +29,23 @@
     .info{
         background-color: dodgerblue;
         border-radius: 7px;
+        outline: dodgerblue;
+        border: 1px dodgerblue solid; 
+        margin-bottom: 2px;
+    }
+    .info:hover{
+        color: white;
     }
     .purchase{
         background-color: lawngreen;
         border-radius: 7px;
+        outline: lawngreen;
+        border: lawngreen 1px solid;
+        margin-bottom: 2px;
+    }
+    .purchase:hover{
+        color: white;
+        background-color: darkgreen;
     }
 </style>
 <body>
@@ -75,6 +88,39 @@
             {% endfor %}
         </tbody>
     </table>
-    <!-- <p>Presently we only have {{ items_name }} in stock</p> -->
 </body>
-</html>
+</html> -->
+
+{% extends "Base.html" %}
+
+{% block Tile %}
+    Market Page
+{% endblock %}
+
+{% block Body %}
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Barcode</th>
+                <th scope="col">Price</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items_name %}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.barcode}}</td>
+                    <td>{{item.price}}</td>
+                    <td>
+                        <button class="info">More Info</button>
+                        <button class="purchase">Purchase This</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
